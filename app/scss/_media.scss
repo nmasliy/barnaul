@@ -71,6 +71,14 @@
 
 // Hover section
 @media (min-width: 1025px) {
+   .card {
+      &__tabs-btn {
+         transition: .3s ease-in-out;
+         &:hover {
+            color: $accent;
+         }
+      }
+   }
    .cart {
       &__download-link:hover {
          text-decoration: underline;

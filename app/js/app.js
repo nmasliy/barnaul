@@ -77,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         $menuContents.forEach(menu => {
                             if (link.dataset.menu === menu.dataset.menu) {
-                                console.log(menu);
                                 openMenu(menu);
                             }
                         })
@@ -375,9 +374,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if ($accordions.length > 0) {
             $accordions.forEach(item => {
-                console.log(item)
                 item.addEventListener('click', function() {
                     item.closest('.questions__item').classList.toggle('active');
+                })
+            })
+        }
+    }
+
+    function initCardSlider() {
+        const $slider = document.querySelector('.card__slider');
+        const $sliderThumbs = document.querySelector('.card__slider-thumbs');
+        if ($slider) {
+            const thumbs = new Swiper($sliderThumbs, {
+                spaceBetween: 17,
+                direction: 'vertical',
+                slidesPerView: 'auto',
+                watchSlidesProgress: true,
+                breakpoints: {
+                    320: {
+                        direction: 'horizontal',
+                        spaceBetween: 30,
+
+                    },
+                    769: {
+                        direction: 'vertical',
+                        spaceBetween: 17,
+                    },
+                },
+            });
+            const cardSlider = new Swiper($slider, {
+                spaceBetween: 50,
+                thumbs: {
+                    swiper: thumbs,
+                },
+            });
+        }
+    }
+
+    function initCardTabs() {
+        const $tabs = document.querySelectorAll('.card__tabs-btn');
+        const $tabsContents = document.querySelectorAll('.card__tabs-content-item');
+
+        if ($tabs.length > 0) {
+            $tabs.forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    $tabsContents.forEach(content => {
+                        if (tab.dataset.tab === content.dataset.tab) {
+                            tab.classList.add('active');
+                            content.classList.add('active');
+                            return;
+                        } else {
+                            tab.classList.remove('active');
+                            content.classList.remove('active');
+                        }
+                    })
+                    
                 })
             })
         }
@@ -396,4 +449,6 @@ document.addEventListener("DOMContentLoaded", function () {
     initPhoneMask();
     initFilterAccordion();
     initQuestionsAccordion();
+    initCardSlider();
+    initCardTabs();
 });

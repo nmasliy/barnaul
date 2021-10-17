@@ -264,6 +264,10 @@
         display: block;
         position: relative;
         margin-bottom: 12px;
+
+        img {
+            max-height: 238px;
+        }
     }
 
     &__img-banner {

@@ -1,0 +1,58 @@
+.statistic {
+    overflow: hidden;
+    &__inner {
+        background-color: $grey;
+    }
+
+    &__title {
+        max-width: 870px;
+        margin-top: 0;
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 178%;
+        margin-bottom: 35px;
+        max-width: 740px;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -40px;
+        overflow: hidden;
+    }
+
+    &__item {
+        flex: 1 1 auto;
+        max-width: 30%;
+        min-width: 190px;
+        margin: 40px;
+    }
+
+    &__item-inner {
+        display: inline-flex;
+        flex-direction: column;
+    }
+
+    &__key {
+        font-family: 'RFDewiExpanded-Ultrabold', sans-serif;
+        font-weight: 800;
+        font-size: 18px;
+        letter-spacing: 0.01em;
+        border-bottom: 1px solid $accent;
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+        span {
+            color: $accent;
+            font-size: 32px;
+            line-height: 125%;
+            text-transform: uppercase;
+        }
+    }
+
+    &__value {
+        font-size: 16px;
+    }
+
+}

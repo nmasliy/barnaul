@@ -1,0 +1,35 @@
+.certificates {
+    padding-bottom: 120px;
+    padding-top: 78px;
+
+    &__inner {
+        max-width: 904px;
+    }
+    
+    &__title {
+        font-size: 18px;
+        line-height: 167%;
+        margin-bottom: 26px;
+        color: $black;
+        font-weight: 400;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -16px;
+        margin-bottom: 72px;
+        overflow: hidden;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__item {
+        margin: 8px;
+        width: calc(33.333% - 16px);
+        img {
+            width: 100%;
+        }
+    }
+}

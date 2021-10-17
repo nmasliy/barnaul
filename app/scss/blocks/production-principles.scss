@@ -1,0 +1,38 @@
+.production-principles {
+    padding-top: 77px;
+    padding-bottom: 23px;
+
+    &__title {
+        margin-bottom: 42px;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 144%;
+        letter-spacing: 0.01em;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__col {
+        &:nth-child(2) {
+            padding-right: 180px;
+            margin-left: 20px;
+        }
+    }
+    
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 27px;
+        font-weight: 400;
+        img {
+            flex-shrink: 0;
+        }
+        span {
+            display: inline-block;
+            margin-left: 37px;
+        }
+    }
+}

@@ -1,0 +1,220 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 224px;
+    height: 100%;
+    z-index: 7;
+    background-color: $main;
+    color: $white;
+
+    &__inner {
+        padding-top: 16px;
+        padding-bottom: 10px;
+    }
+
+    &__head {
+        padding: 0 35px;
+        padding-bottom: 25px;
+    }
+
+    &__logo {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    &__city {
+        display: flex;
+        font-size: 14px;
+        line-height: 114%;
+        margin-bottom: 20px;
+    }
+
+    &__city-caption {
+        color: $darkText;
+        flex-shrink: 0;
+    }
+
+    &__city-select-wrapper {
+        position: relative;
+        margin-left: 11px;
+    }
+
+    &__city-select-icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+    }
+    
+    &__city-select {
+        display: block;
+        color: $white;
+        background-color: transparent;
+        border: none;
+        appearance: none;
+        outline: none;
+        text-align: right;
+        padding-right: 15px;
+        cursor: pointer;
+
+        option {
+            background-color: $black;
+        }
+    }
+
+    &__phone {
+        font-size: 20px;
+        line-height: 120%;
+    }
+
+    &__cart {
+        display: flex;
+        align-items: center;
+        padding: 23px 35px;
+        border-top: 1px solid #373B43;
+        border-bottom: 1px solid #373B43;
+        font-weight: 500;
+        color: $darkText;
+
+        span {
+            display: inline-block;
+            margin-left: 18px;
+        }
+    }
+
+    &__body {
+        padding: 15px 0 35px 0;
+    }
+
+    &__navigation {
+        li {
+            position: relative;
+            font-weight: 500;
+            margin: 0;
+
+            span {
+                display: inline-block;
+                margin-left: 25px;
+            }
+        }
+    }
+
+    &__search {
+        display: flex;
+        position: relative;
+        margin-top: 30px;
+        padding: 0 38px;
+
+        input {
+            padding-bottom: 9px;
+            padding-left: 28px;
+            display: block;
+            width: 100%;
+            font-style: italic;
+            color: $white;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid $darkText;
+            appearance: none;
+            outline: none;
+
+            &::placeholder {
+                color: $darkText;
+            }
+        }
+    }
+
+    &__search-icon {
+        position: absolute;
+        left: 38px;
+        top: 0;
+    }
+
+    &__foot-caption {
+        color: $darkText;
+        font-size: 14px;
+        line-height: 114%;
+        margin-bottom: 13px;
+    }
+
+    &__foot-links {
+        a {
+            display: flex;
+            align-items: center;
+            color: #A1A4AC;
+            margin-bottom: 8px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            span {
+                display: inline-block;
+                margin-right: 9px;
+            }
+        }
+    }
+
+    &__foot-socials {
+        ul {
+            display: flex;
+            margin: 0 -12px;
+            overflow: hidden;
+        }
+        li {
+            margin: 0 12px;
+        }
+    }
+
+    &__foot-item {
+        padding: 17px 35px;
+        border-top: 1px solid #373B43;
+    }
+
+}
+
+.navigation {
+    &__link {
+        display: flex;
+        align-items: center;
+        padding: 22px 35px;
+    }
+    &__list-container {
+        display: none;
+        position: absolute;
+        margin-left: 100%;
+    }
+    &__list-wrapper {
+        overflow-x: hidden;
+        position: fixed;
+        top: 0;
+        height: 100%;
+        z-index: 5;
+        background-color: $darker;
+        padding-left: 20px;
+        padding-right: 10px;
+        width: 205px;
+
+        .simplebar-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        ul {
+
+            li {
+                font-size: 15px;
+                line-height: 160%;
+                font-weight: 400;
+                color: #97A3B0;
+            }
+            a {
+                display: block;
+                padding: 16px 0;
+            }
+
+        }
+    }
+}

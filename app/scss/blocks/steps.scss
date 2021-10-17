@@ -1,0 +1,83 @@
+.steps {
+    position: relative;
+    padding-top: 101px;
+    padding-bottom: 360px;
+
+    &__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: url('../images/dist/steps-bg.png') center / cover no-repeat;
+        z-index: -1;
+    }
+
+    &__title {
+        max-width: 520px;
+    }
+
+    &__list {
+        padding-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin: -8px -17px;
+        overflow: hidden;
+    }
+
+    &__item {
+        width: calc(33.333% - 34px);
+        margin: 8px 17px;
+        background-color: $white;
+        border: 1px solid #E5ECF3;
+        border-radius: 8px;
+        padding: 26px 21px;
+        padding-bottom: 56px;
+    }
+
+    &__num {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-bottom: 12px;
+        color: $accent;
+        font-family: 'RFDewiExpanded-Ultrabold', sans-serif;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 21px;
+        line-height: 190%;
+        flex-shrink: 0;
+
+        &::after {
+            content: "";
+            display: block;
+            margin-left: 18px;
+            height: 2px;
+            background-color: #F2F3F3;
+            flex: 1 1 auto;
+            margin-right: -21px;
+        }
+    }
+
+    &__name {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 144%;
+        margin-bottom: 16px;
+    }
+
+    &__text {
+        max-width: 290px;
+        line-height: 150%;
+
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        li {
+            margin: 0;
+        }
+    }
+}

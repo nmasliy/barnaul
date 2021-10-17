@@ -1,0 +1,73 @@
+.engineering-department {
+    padding-top: 96px;
+    padding-bottom: 60px;
+    
+    &__title {
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 18px;
+        margin-left: -26px;
+        margin-right: -26px;
+        padding-bottom: 44px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+        
+        &::before {
+            position: absolute;
+            content: "";
+            left: 160px;
+            bottom: 0;
+            width: 734px;
+            height: calc(100% - 60px);
+            background-color: #EFEFEF;
+            z-index: -1;
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__img {
+        width: calc(50% - 52px);
+        margin: 0 26px;
+    }
+
+    &__content {
+        width: calc(50% - 52px);
+        margin: 0 26px;
+        padding-bottom: 46px;
+    }
+
+    &__name {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 118%;
+        margin-bottom: 7px;
+    }
+
+    &__position {
+        margin-bottom: 13px;
+    }
+
+    &__cite {
+        position: relative;
+        color: #575B62;
+    }
+
+    &__quote-element {
+        position: absolute;
+        left: -2px;
+        top: -12px;
+        z-index: -1;
+    }
+}

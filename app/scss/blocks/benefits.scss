@@ -1,0 +1,38 @@
+.benefits {
+    padding-top: 52px;
+    padding-bottom: 66px;
+
+    &__title {
+        margin-bottom: 50px;
+        margin-top: 0;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -36px -25px;
+        overflow: hidden;
+    }
+
+    &__item {
+        margin: 36px 25px;
+        width: calc(33.333% - 50px);
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        border-radius: 8px;
+        background-color: $accent;
+        margin-bottom: 24px;
+    }
+
+    &__name {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 144%;
+    }
+}

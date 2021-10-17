@@ -1,0 +1,72 @@
+.vacancy {
+    padding-top: 96px;
+    padding-bottom: 120px;
+    
+    &__inner {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__img {
+        position: relative;
+        margin-left: 59px;
+        margin-right: 180px;
+        img {
+            display: flex;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            left: -59px;
+            bottom: 0;
+            height: calc(100% - 75px);
+            width: calc(100% + 108px);
+            background-color: $grey;
+            z-index: -1;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        font-weight: 400;
+    }
+
+    &__name {
+        font-size: 20px;
+        line-height: 130%;
+        margin-bottom: 10px;
+    }
+
+    &__position {
+        font-size: 16px;
+        line-height: 162%;
+        color: #5D6371;
+        margin-bottom: 32px;
+    }
+
+    &__link {
+        display: inline-block;
+        font-size: 20px;
+        line-height: 130%;
+        color: $black;
+        margin-bottom: 32px;
+    }
+
+    &__caption {
+        font-size: 16px;
+        line-height: 162%;
+        color: #232832;
+        margin-bottom: 14px;
+    }
+
+    &__socials {
+        display: flex;
+        li {
+            margin: 0;
+            & + li {
+                margin-left: 18px;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.video-gallery {
+    padding-top: 57px;
+    padding-bottom: 120px;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -10px -16px;
+        overflow: hidden;
+    }
+    &__item {
+        position: relative;
+        width: calc(50% - 32px);
+        margin: 10px 16px;
+    }
+    &__img {
+        height: 273px;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &__caption {
+        max-width: 305px;
+    }
+}

@@ -1,0 +1,59 @@
+.design-department {
+    padding-top: 60px;
+    padding-bottom: 100px;
+    overflow: hidden;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__content {
+        margin-right: 120px;
+        max-width: 610px;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        margin-top: 0;
+    }
+
+    &__subtitle {
+        margin-bottom: 39px;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 108%;
+    }
+
+    &__img-wrapper {
+        background-color: $grey;
+        padding-left: 97px;
+        padding-top: 55px;
+        margin-top: 10px;
+    }
+
+    &__img {
+        margin-right: -280px;
+        img {
+            display: flex;
+        }
+    }
+
+    &__box {
+        margin-bottom: 42px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__box-title {
+        margin-bottom: 16px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 144%;
+    }
+
+    li {
+        margin: 0;
+    }
+}

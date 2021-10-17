@@ -1,0 +1,20 @@
+.production-park {
+    padding-top: 104px;
+    padding-bottom: 120px;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        margin: -14px;
+    }
+
+    &__item {
+        margin: 14px;
+        width: calc(25% - 28px);
+        img {
+            display: flex;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,470 @@
+// USER VARIABLES SECTION
+$black: #000000;
+$darker: #202226;
+$white: #ffffff;
+$background: #F2F3F3;
+$main: #282A2E;
+$accent: #EF7F1A;
+$accentHover: #da7116;
+$grey: #E8E9EA;
+$darkgrey: #78878F;
+$darkText: #66707B;
+$red: red;
+$green: green;
+
+// GENERAL DOCUMENT STYLES
+input,
+textarea {
+    outline: transparent;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 150%;
+    color: $main;
+    background: $background;
+}
+
+strong, b {
+    font-weight: 700;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+ul.dash-list > li:before {
+    display: inline-block;
+    content: "-";
+}
+
+li {
+    padding: 0;
+    margin: 25px 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: inherit;
+    margin: 20px 0;
+    line-height: 125%;
+}
+
+h1, h2 {
+    font-family: 'RFDewiExpanded-Ultrabold', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 125%;
+
+    span {
+        color: #EF7F1A;
+    }
+}
+
+// Input number fix
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+// /Input number fix
+
+input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+.form input, .form textarea,
+form input, form textarea {
+    display: block;
+    width: 100%;
+    background-color: $white;
+    font-weight: 300;
+    border: 1px solid $darkgrey;
+    border-radius: 8px;
+    padding: 20px 23px;
+    margin: 20px 0;
+    color: #60656F;
+    font-size: 16px;
+    line-height: 150%;
+
+    &::placeholder {
+        color: #60656F;
+    }
+
+    // Дополнительные классы для валидации
+    &.invalid {
+        color: $red;
+        border-color: $red;
+
+        &::placeholder {
+            color: $red;
+        }
+    }
+    &.valid {
+        color: $green;
+        border-color: $green;
+
+        &::placeholder {
+            color: $green;
+        }
+    }
+}
+
+button {
+    outline: transparent;
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+    min-height: 100px;
+}
+
+img {
+    display: inline-flex;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo {
+    display: block;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+
+    body {
+        overflow: hidden;
+    }
+}
+
+.block-scroll {
+    overflow: hidden;
+    height: 100%;
+
+    body {
+        overflow: hidden;
+        height: 100%;
+    }
+}
+
+.container {
+    max-width: 1150px;
+    width: 100%;
+    padding: 0 25px;
+    margin: 0 auto;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.main {
+    flex: 1 1 auto;
+    padding-left: 224px;
+    overflow: hidden;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+    padding: 24px 55px;
+    text-align: center;
+    background-color: $accent;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: break-spaces;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: $white;
+
+    &--white {
+        color: $white;
+        border-color: $white;
+        background-color: transparent;
+
+        svg path {
+            stroke: $white;
+        }
+    }
+    
+    &--lead {
+        padding: 19px 30px;
+    }
+
+    &--card {
+        padding: 15px 30px;
+    }
+
+    &--outline {
+        background-color: transparent;
+        border-color: $accent;
+        color: $accent;
+    }
+
+    &--big {
+        min-width: 312px;
+    }
+
+    &--large-font {
+        font-size: 24px;
+    }
+
+    &:focus {
+        box-shadow: 0px 3px 7px rgba(8, 59, 129, 0.19);
+    }
+
+    svg, img {
+        display: inline-block;
+        margin-left: 23px;
+    }
+}
+
+.socials {
+    padding: 15px 0;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-left: 0;
+        list-style: none;
+        margin: -4px;
+    }
+    
+    li {
+        margin: 4px;
+    }
+}
+
+.pagination {
+    padding: 30px 0;
+    &__list {
+        font-size: 14px;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        list-style: none;
+        padding-left: 0;
+        margin: 0 -4px;
+        overflow: hidden;
+        color: #595959;
+    }
+    &__item {
+        margin: 0 4px;
+        background-color: $white;
+        border-radius: 4px;
+        border: 1px solid #D9D9D9;
+        font-weight: 400;
+
+        &.active {
+            border-color: $accent;
+            color: $accent;
+        }
+    }
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 33px;
+        height: 32px;
+    }
+
+}
+
+.preload * {
+	transition: none !important;
+}
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+
+    &__title {
+        margin: 0;
+    }
+
+    &__link {
+        margin-left: 33px;
+        display: flex;
+        align-items: center;
+        color: $darkText;
+
+        svg {
+            display: inline-block;
+            margin-left: 15px;
+        }
+    }
+}
+
+.side-background {
+    
+    &__wrapper {
+        position: relative;
+        &::before {
+            position: absolute;
+            content: "";
+            left: -105px;
+            top: 0;
+            bottom: 0;
+            width: 105px;
+            height: 100%;
+            background-color: $grey;
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 200vw;
+            height: 100%;
+            background-color: $grey;
+        }
+    }
+
+    &__content {
+        padding: 114px 0 146px 0;
+        position: relative;
+        z-index: 3;
+    }
+}
+
+.checkbox {
+    &__item {
+        position: relative;
+        width: 16px;
+        height: 16px;
+        border: 1px solid #8493A5;
+        border-radius: 2px;
+
+        &::after {
+            position: absolute;
+            content: "";
+            background: url('../images/dist/check-icon.svg') center no-repeat;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 8px;
+            opacity: 0;
+            transition: .2s ease-in-out;
+        }
+    }
+    label {
+        display: flex;
+        align-items: center;
+    }
+
+    input {
+        display: none;
+        &:checked {
+            & ~ .checkbox__item {
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    span {
+        display: inline-block;
+        margin-left: 5px;
+    }
+}
+
+.radiobutton {
+
+    &__item {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        background: $white;
+        border: 1px solid #D4D8DA;
+        border-radius: 50%;
+
+        &::after {
+            position: absolute;
+            content: "";
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background-color: $accent;
+            opacity: 0;
+            border-radius: 50%;
+            transition: .2s ease-in-out;
+        }
+    }
+    label {
+        display: flex;
+        align-items: center;
+    }
+
+    input {
+        display: none;
+        &:checked {
+            & ~ .radiobutton__item {
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    span {
+        display: inline-block;
+        margin-left: 12px;
+    }
+}

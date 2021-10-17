@@ -1,0 +1,131 @@
+<div class="modal micromodal-slide" id="modal-1">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container">
+            <div class="modal__inner">
+                <div class="modal__content">
+                    <form action="#" class="modal__form calc-form">
+                        <h2 class="calc-form__title">Запросить стоимость</h2>
+                        <div class="calc-form__item">
+                            <div class="calc-form__item-head">
+                                <div class="calc-form__item-caption">Высота потолков в помещении, м</div>
+                                <div class="calc-form__item-input">
+                                    <input type="text" data-start="5" data-min="1.5" data-max="10" data-suffix="м." data-decimals="1" data-step="0.1">
+                                </div>
+                            </div>
+                            <div class="calc-form__item-content">
+                                <div class="calc-form__item-slider"></div>
+                            </div>
+                            <div class="calc-form__item-foot">
+                                <div class="calc-form__item-caption calc-form__value-from">1,5</div>
+                                <div class="calc-form__item-caption calc-form__value-to">10</div>
+                            </div>
+                        </div>
+                        <div class="calc-form__item">
+                            <div class="calc-form__item-head">
+                                <div class="calc-form__item-caption">Площадь отапливаемого помещения, м <sup>2</sup></div>
+                                <div class="calc-form__item-input">
+                                    <input type="text" data-start="15000" data-min="20" data-max="30000" data-suffix="м2." data-decimals="0" data-step="1">
+                                </div>
+                            </div>
+                            <div class="calc-form__item-content">
+                                <div class="calc-form__item-slider"></div>
+                            </div>
+                            <div class="calc-form__item-foot">
+                                <div class="calc-form__item-caption calc-form__value-from">20</div>
+                                <div class="calc-form__item-caption calc-form__value-to">30 0000</div>
+                            </div>
+                        </div>
+                        <div class="calc-form__item">
+                            <div class="calc-form__item-caption">Степень автоматизации </div>
+                            <div class="calc-form__radiobuttons">
+                                <div class="radiobutton calc-form__radiobtn">
+                                    <label>
+                                        <input type="radio" checked name="automatization" value="1">
+                                        <div class="radiobutton__item"></div>
+                                        <span>Ручной</span>
+                                    </label>
+                                </div>
+                                <div class="radiobutton calc-form__radiobtn">
+                                    <label>
+                                        <input type="radio" name="automatization" value="2">
+                                        <div class="radiobutton__item"></div>
+                                        <span>Автоматический</span>
+                                    </label>
+                                </div>
+                                <div class="radiobutton calc-form__radiobtn">
+                                    <label>
+                                        <input type="radio" name="automatization" value="3">
+                                        <div class="radiobutton__item"></div>
+                                        <span>Механизированный</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calc-form__item">
+                            <div class="calc-form__item-caption">Выберите топливо</div>
+                            <div class="calc-form__fuel">
+                                <div class="calc-form__fuel-item">
+                                    <label>
+                                        <input type="checkbox" name="fuel" value="1">
+                                        <div class="calc-form__fuel-img">
+                                            <img src="images/dist/fuel-1.jpg" alt="коро-древесные отходы">
+                                        </div>
+                                        <span>Коро-древесные отходы </span>
+                                    </label>
+                                </div>
+                                <div class="calc-form__fuel-item">
+                                    <label>
+                                        <input type="checkbox" name="fuel" value="2">
+                                        <div class="calc-form__fuel-img">
+                                            <img src="images/dist/fuel-2.jpg" alt="Пеллеты">
+                                        </div>
+                                        <span>Пеллеты</span>
+                                    </label>
+                                </div>
+                                <div class="calc-form__fuel-item">
+                                    <label>
+                                        <input type="checkbox" name="fuel" value="3">
+                                        <div class="calc-form__fuel-img">
+                                            <img src="images/dist/fuel-3.jpg" alt="Пеллеты">
+                                        </div>
+                                        <span>Отходы с/х производства</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calc-form__item">
+                            <div>Расчетная мощность </div>
+                            <div class="calc-form__power">3 МВт</div>
+                        </div>
+                        <div class="calc-form__item">
+                            <div class="calc-form__row">
+                                <div class="calc-form__col">
+                                    <input type="text" placeholder="Ваше имя">
+                                    <input type="text" placeholder="Ваш телефон" data-phone-mask>
+                                </div>
+                                <div class="calc-form__col">
+                                    <textarea placeholder="Добавьте ваш комментарий"></textarea>
+                                </div>
+                            </div>
+                            <div class="calc-form__row">
+                                <div class="calc-form__col">
+                                    <button type="submit" class="calc-form__btn btn btn--card">отправить</button>
+                                </div>
+                                <div class="calc-form__col">
+                                    <div class="calc-form__policy">Нажимая на кнопку, вы соглашаетесь с нашими условиями о передаче данных</div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <button class="modal__close" data-micromodal-close aria-label="Close this dialog window">
+                        <span data-micromodal-close>Закрыть</span>
+                        <svg data-micromodal-close width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1.69531" y="0.489746" width="16" height="1" transform="rotate(45 1.69531 0.489746)" fill="black"/>
+                            <rect x="13.0098" y="1.19678" width="16" height="1" transform="rotate(135 13.0098 1.19678)" fill="black"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

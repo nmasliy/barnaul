@@ -1,0 +1,267 @@
+.page-head {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $white;
+
+    &--white {
+        color: #727886;
+
+        .page-head__title {
+            color: $main;
+        }
+    }
+    
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        padding-top: 43px;
+        padding-bottom: 30px;
+        min-height: 433px;
+    }
+    
+    &__container {
+        max-width: 1235px;
+        padding-left: 66px;
+    }
+    &__nav {
+        font-size: 14px;
+        line-height: 214%;
+        margin-bottom: 30px;
+        color: #BCADAD;
+        
+        ul {
+            display: flex;
+            padding-left: 0;
+        }
+        li {
+            margin: 0;
+            & + li {
+                margin-left: 13px;
+                a {
+                    padding-left: 13px;
+                }
+            }
+            &:first-child a::before {
+                display: none;
+            }
+            &:last-child {
+                color: $white;
+            }
+        }
+        a {
+            position: relative;
+            display: block;
+            &::before {
+                position: absolute;
+                content: "|";
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                color: #727886;
+            }
+        }
+        &--grey {
+            color: #727886;
+            li {
+                &:last-child {
+                    color: $main;
+                }
+                
+            }
+            a::before {
+                color: #727886;
+            }
+        }
+    }
+
+    &__center {
+        margin-top: auto;
+        margin-bottom: 30px;
+
+        &--all {
+            margin-bottom: auto;
+        }
+    }
+
+    &__categories {
+        font-size: 18px;
+        line-height: 133%;
+        margin-bottom: 72px;
+        color: #C4C4C5;
+        font-weight: 400;
+
+        ul {
+            display: flex;
+            padding-left: 0;
+            align-items: center;
+        }
+
+        li {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            a {
+                position: relative;
+                display: block;
+                padding-bottom: 4px;
+                
+                &::before {
+                    position: absolute;
+                    content: "";
+                    top: 8px;
+                    left: -50px;
+                    width: 1px;
+                    height: 12px;
+                    background-image: url("data:image/svg+xml,%3Csvg width='1' height='12' viewBox='0 0 1 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.5' y1='2.18557e-08' x2='0.499999' y2='12' stroke='white'/%3E%3C/svg%3E%0A");
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    bottom: 0;
+                    height: 2px;
+                    width: 0;
+                    background-color: $accent;
+                }
+            }
+            &.active {
+                color: $accent;
+                a {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+
+            & + li {
+                margin-left: 100px;
+            }
+            &:first-child a::before {
+                display: none;
+            }
+        }
+        
+        &--grey {
+            color: #727478;
+
+            li a::before {
+                background-image: url("data:image/svg+xml,%3Csvg width='1' height='12' viewBox='0 0 1 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.5' y1='2.18557e-08' x2='0.499999' y2='12' stroke='%23727478'/%3E%3C/svg%3E%0A");
+            }
+        }
+
+    }
+
+    &__subtitle {
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 222%;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        font-family: 'RFDewiExpanded-Ultrabold', sans-serif;
+    }
+
+    &__title {
+        letter-spacing: 0.01em;
+        max-width: 1030px;
+        color: $white;
+        margin-top: 0;
+    }
+
+    &__caption {
+        font-size: 22px;
+        line-height: 136%;
+        margin-top: auto;
+    }
+
+    &__press-center {
+        margin-top: auto;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -6px -28px;
+            overflow: hidden;
+        }
+
+        li {
+            margin: 6px 28px;
+            font-size: 20px;
+            line-height: 120%;
+            font-weight: 400;
+            color: $white;
+            
+            &.active {
+                color: $accent;
+                a {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        
+        a {
+            display: inline-block;
+            padding-bottom: 14px;
+            position: relative;
+            &::after {
+                position: absolute;
+                content: "";
+                width: 0;
+                left: 0;
+                bottom: 0;
+                height: 3px;
+                background-color: $accent;
+            }
+        }
+    }
+}
+
+.engineering-head {
+    .page-head__inner {
+        display: block;
+    }
+}
+
+.catalog-head {
+    padding-bottom: 90px;
+    &__nav {
+        margin-bottom: 60px;
+    }
+    &__inner {
+        min-height: auto;
+    }
+    &__title {
+        margin-bottom: 0;
+    }
+}
+
+.press-center-head {
+    &__inner {
+        padding-bottom: 0;
+    }
+}
+
+.catalog-inner-head {
+    padding-top: 53px;
+    padding-bottom: 42px;
+
+    &__inner {
+        max-width: 800px;
+    }
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    .article-section__back-btn {
+        margin-bottom: 33px;
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 167%;
+        color: $black;
+    }
+
+}

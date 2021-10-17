@@ -1,0 +1,48 @@
+.clients {
+    padding-top: 60px;
+    padding-bottom: 46px;
+
+    &__slider-container {
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 0 25px;
+    }
+    
+    &__title {
+        margin-bottom: 48px;
+    }
+
+    &__slider {
+        padding: 0 10px;
+        height: 103px;
+        .swiper-wrapper {
+            align-items: center;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-width: 161px;
+        img {
+            max-height: 130px;
+        }
+    }
+
+    &__slider-prev,
+    &__slider-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
+        cursor: pointer;
+    }
+    &__slider-next {
+        right: 0;
+    }
+    &__slider-prev {
+        left: 0;
+    }
+}

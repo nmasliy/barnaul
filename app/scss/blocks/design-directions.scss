@@ -1,0 +1,28 @@
+.design-directions {
+    padding-top: 68px;
+    padding-bottom: 45px;
+
+    &__title {
+        font-size: 24px;
+        line-height: 144%;
+        letter-spacing: 0.01em;
+        color: #282A2E;
+        margin-bottom: 10px;
+        max-width: 600px;
+        font-weight: 700;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        ul {
+            max-width: 570px;
+            & + ul {
+                margin-left: 20px;
+            }
+        }
+        li {
+            margin: 15px 0;
+        }
+    }
+}

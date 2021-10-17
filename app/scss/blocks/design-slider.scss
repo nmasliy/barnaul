@@ -1,0 +1,46 @@
+.design-slider {
+    position: relative;
+    &__container {
+        margin-top: -23px;
+        padding-left: 86px;
+        padding-right: 0;
+        max-width: 1290px;
+    }
+
+    &__next,
+    &__prev {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        height: 100px;
+        width: 12px;
+        background-color: rgba(0, 0, 0, 0.21);
+        z-index: 3;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 292px;
+        min-width: 175px;
+        width: auto;
+    }
+    
+    &__wrapper {
+        align-items: center;
+    }
+
+    &__content {
+        height: 180px;
+    }
+
+    &__next {
+        right: 0;
+    }
+    &__prev {
+        left: 0;
+    }
+}

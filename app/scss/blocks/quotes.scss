@@ -1,0 +1,51 @@
+.quote {
+    padding-top: 132px;
+    padding-bottom: 60px;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__desc {
+        flex-shrink: 0;
+    }
+
+    &__img {
+        margin-bottom: 24px;
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    &__name {
+        font-weight: bold;
+        font-size: 21px;
+        line-height: 32px;
+        margin-bottom: 8px;
+    }
+
+    &__position {
+        font-size: 14px;
+        line-height: 171%;
+    }
+
+    &__content {
+        position: relative;
+        max-width: 700px;
+        margin-left: 125px;
+
+        q {
+            position: relative;
+            z-index: 3;
+            font-style: italic;
+            font-size: 18px;
+            line-height: 183%;
+        }
+    }
+
+    &__element {
+        position: absolute;
+        left: -102px;
+        top: -27px;
+    }
+}

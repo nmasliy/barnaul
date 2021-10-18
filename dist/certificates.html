@@ -623,9 +623,7 @@
 					</div>
 				</div>
 			</div>
-		</footer>
-	</div>
-	<div class="modal micromodal-slide" id="modal-1">
+			<div class="modal micromodal-slide" id="modal-1">
     <div class="modal__overlay" tabindex="-1" data-micromodal-close>
         <div class="modal__container">
             <div class="modal__inner">
@@ -636,7 +634,7 @@
                             <div class="calc-form__item-head">
                                 <div class="calc-form__item-caption">Высота потолков в помещении, м</div>
                                 <div class="calc-form__item-input">
-                                    <input type="text" data-start="5" data-min="1.5" data-max="10" data-suffix="м." data-decimals="1" data-step="0.1">
+                                    <input class="calc-form__item-input-height" type="text" data-start="5" data-min="1.5" data-max="10" data-suffix="м." data-decimals="1" data-step="0.1">
                                 </div>
                             </div>
                             <div class="calc-form__item-content">
@@ -649,9 +647,9 @@
                         </div>
                         <div class="calc-form__item">
                             <div class="calc-form__item-head">
-                                <div class="calc-form__item-caption">Площадь отапливаемого помещения, м <sup>2</sup></div>
+                                <div class="calc-form__item-caption">Площадь отапливаемого помещения, м<sup>2</sup></div>
                                 <div class="calc-form__item-input">
-                                    <input type="text" data-start="15000" data-min="20" data-max="30000" data-suffix="м2." data-decimals="0" data-step="1">
+                                    <input class="calc-form__item-input-square" type="text" data-start="15000" data-min="20" data-max="30000" data-suffix="м2." data-decimals="0" data-step="1">
                                 </div>
                             </div>
                             <div class="calc-form__item-content">
@@ -756,7 +754,62 @@
         </div>
     </div>
 </div>
-	<script src="js/libs/libs.min.js"></script>
+			<script src="js/libs/libs.min.js"></script>
+			<script>
+				const $sliders = document.querySelectorAll('.calc-form__item-slider');
+				const $value = document.querySelector('.calc-form__power'); 
+				const $height = document.querySelector('.calc-form__item-input-height');
+				const $square = document.querySelector('.calc-form__item-input-square');
+
+				if ($sliders.length > 0) {
+
+					$sliders.forEach(slider => {
+
+						const parent = slider.closest('.calc-form__item');
+						const input = parent.querySelector('.calc-form__item-input input')
+						
+						let suffix = input.dataset.suffix;
+						let decimals = Number(input.dataset.decimals);
+						let min = Number(input.dataset.min);
+						let max = Number(input.dataset.max);
+						let start = Number(input.dataset.start);
+						let step = Number(input.dataset.step);
+
+						noUiSlider.create(slider, {
+							start: start,
+							step: step,
+							connect: 'lower',
+							range: {
+								'min': min,
+								'max': max
+							},
+							format: wNumb({
+								decimals: decimals,
+								suffix: ' ' + suffix,
+								thousand: ' ',
+							})
+						});
+
+						slider.noUiSlider.on('update', function (values, handle) {
+							input.value = values[handle];
+							const heightValue = $height.value.replace('м.','').trim().replace(' ', '');
+							const squareValue = $square.value.replace('м2.','').trim().replace(' ', '');
+							$value.textContent = (+heightValue * +squareValue * 40 * 0.000001).toFixed(1) + ' МВт';
+						});
+						
+						input.addEventListener('change', function () {
+							slider.noUiSlider.set(this.value);
+							const heightValue = $height.value.replace('м.','').trim().replace(' ', '');
+							const squareValue = $square.value.replace('м2.','').trim().replace(' ', '');
+							$value.textContent = (+heightValue * +squareValue * 40 * 0.000001).toFixed(1) + ' МВт';
+						});
+					})
+				}
+				
+				
+			</script>
+		</footer>
+	</div>
 	<script src="js/app.min.js"></script>
 </body>
 </html>

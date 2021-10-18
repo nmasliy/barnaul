@@ -260,50 +260,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function initRangeSliders() {
-        const $sliders = document.querySelectorAll('.calc-form__item-slider');
+    function initRangeSliders() {        
         const $filterSlider = document.querySelector('.catalog-filter__power-slider');
 
-        if ($sliders.length > 0) {
-
-            $sliders.forEach(slider => {
-
-                const parent = slider.closest('.calc-form__item');
-                const input = parent.querySelector('.calc-form__item-input input')
-                
-                let suffix = input.dataset.suffix;
-                let decimals = Number(input.dataset.decimals);
-                let min = Number(input.dataset.min);
-                let max = Number(input.dataset.max);
-                let start = Number(input.dataset.start);
-                let step = Number(input.dataset.step);
-
-                noUiSlider.create(slider, {
-                    start: start,
-                    step: step,
-                    connect: 'lower',
-                    range: {
-                        'min': min,
-                        'max': max
-                    },
-                    format: wNumb({
-                        decimals: decimals,
-                        suffix: ' ' + suffix,
-                        thousand: ' ',
-                    })
-                });
-
-                
-
-                slider.noUiSlider.on('update', function (values, handle) {
-                    input.value = values[handle];
-                });
-                
-                input.addEventListener('change', function () {
-                    slider.noUiSlider.set(this.value);
-                });
-            })
-        }
         
         if ($filterSlider) {
             const input = document.querySelector('.catalog-filter__power-input')

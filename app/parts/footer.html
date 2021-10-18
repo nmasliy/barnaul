@@ -46,10 +46,63 @@
 					</div>
 				</div>
 			</div>
+			<!--#include virtual="/parts/modals.html" -->
+			<script src="js/libs/libs.min.js"></script>
+			<script>
+				const $sliders = document.querySelectorAll('.calc-form__item-slider');
+				const $value = document.querySelector('.calc-form__power'); 
+				const $height = document.querySelector('.calc-form__item-input-height');
+				const $square = document.querySelector('.calc-form__item-input-square');
+
+				if ($sliders.length > 0) {
+
+					$sliders.forEach(slider => {
+
+						const parent = slider.closest('.calc-form__item');
+						const input = parent.querySelector('.calc-form__item-input input')
+						
+						let suffix = input.dataset.suffix;
+						let decimals = Number(input.dataset.decimals);
+						let min = Number(input.dataset.min);
+						let max = Number(input.dataset.max);
+						let start = Number(input.dataset.start);
+						let step = Number(input.dataset.step);
+
+						noUiSlider.create(slider, {
+							start: start,
+							step: step,
+							connect: 'lower',
+							range: {
+								'min': min,
+								'max': max
+							},
+							format: wNumb({
+								decimals: decimals,
+								suffix: ' ' + suffix,
+								thousand: ' ',
+							})
+						});
+
+						slider.noUiSlider.on('update', function (values, handle) {
+							input.value = values[handle];
+							const heightValue = $height.value.replace('м.','').trim().replace(' ', '');
+							const squareValue = $square.value.replace('м2.','').trim().replace(' ', '');
+							$value.textContent = (+heightValue * +squareValue * 40 * 0.000001).toFixed(1) + ' МВт';
+						});
+						
+						input.addEventListener('change', function () {
+							slider.noUiSlider.set(this.value);
+							const heightValue = $height.value.replace('м.','').trim().replace(' ', '');
+							const squareValue = $square.value.replace('м2.','').trim().replace(' ', '');
+							$value.textContent = (+heightValue * +squareValue * 40 * 0.000001).toFixed(1) + ' МВт';
+						});
+					})
+				}
+				
+				
+			</script>
 		</footer>
 	</div>
-	<!--#include virtual="/parts/modals.html" -->
-	<script src="js/libs/libs.min.js"></script>
 	<script src="js/app.min.js"></script>
 </body>
 </html>

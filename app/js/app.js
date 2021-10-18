@@ -340,6 +340,37 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function initCatalogTabs() {
+        const $tabsTriggers = document.querySelectorAll('.catalog-filter__type');
+
+        $tabsTriggers.forEach(tab => {
+            const activeTab = document.querySelector('.catalog-filter__type.active');
+            const activeImg = document.querySelector('.catalog-inner__img.active');
+            const activeContent = document.querySelector('.catalog-inner__tab-content.active');
+
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelectorAll('.catalog-inner__img.active').forEach(item => item.classList.remove('active'));
+                document.querySelectorAll('.catalog-filter__type.active').forEach(item => item.classList.remove('active'));
+                document.querySelectorAll('.catalog-inner__tab-content.active').forEach(item => item.classList.remove('active'));
+
+                activeTab?.classList.remove('active');
+                activeImg.classList.remove('active');
+                activeContent.classList.remove('active');
+
+                const id = tab.getAttribute('data-tab');
+                const content = document.querySelector('.catalog-inner__tab-content[data-tab="'+id+'"]');
+                const img = document.querySelector('.catalog-inner__img[data-tab="'+id+'"]');
+
+                tab.classList.add('active');
+                content.classList.add('active');
+                img.classList.add('active');
+                
+            })
+        })
+    }
+
     function initCardSlider() {
         const $slider = document.querySelector('.card__slider');
         const $sliderThumbs = document.querySelector('.card__slider-thumbs');
@@ -448,4 +479,5 @@ document.addEventListener("DOMContentLoaded", function () {
     initQuestionsAccordion();
     initCardSlider();
     initCardTabs();
+    initCatalogTabs();
 });

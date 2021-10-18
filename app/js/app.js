@@ -396,7 +396,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         spaceBetween: 30,
 
                     },
-                    769: {
+                    1251: {
                         direction: 'vertical',
                         spaceBetween: 17,
                     },
@@ -416,23 +416,61 @@ document.addEventListener("DOMContentLoaded", function () {
         const $tabsContents = document.querySelectorAll('.card__tabs-content-item');
 
         if ($tabs.length > 0) {
-            $tabs.forEach(tab => {
-                tab.addEventListener('click', function(e) {
-                    e.preventDefault();
+            if (window.innerWidth > 768) {
+                $tabs.forEach(tab => {
+                    tab.addEventListener('click', function(e) {
+                        e.preventDefault();
+    
+                        const activeTab = document.querySelector('.card__tabs-btn.active');
+                        const activeContent = document.querySelector('.card__tabs-content-item.active');
 
-                    $tabsContents.forEach(content => {
-                        if (tab.dataset.tab === content.dataset.tab) {
-                            tab.classList.add('active');
-                            content.classList.add('active');
-                            return;
-                        } else {
-                            tab.classList.remove('active');
-                            content.classList.remove('active');
+                        const id = this.getAttribute('data-tab');
+
+                        if (activeTab) {
+                            activeTab.classList.remove('active');
+                            activeContent.classList.remove('active');
                         }
+                        const content = document.querySelector('.card__tabs-content-item[data-tab="'+id+'"]');
+                        
+                        tab.classList.add('active');
+                        content.classList.add('active');
+    
+                    })
+                })
+            }
+
+            if (window.innerWidth <= 768) {
+                const activeTab = document.querySelector('.card__tabs-btn.active');
+                const activeContent = document.querySelector('.card__tabs-content-item.active');
+
+                activeTab.classList.remove('active');
+                activeContent.classList.remove('active');
+
+                const $tabsLinks = document.querySelectorAll('.card__tabs-btn a');
+
+                $tabsLinks.forEach(tab => {
+                    const parent = tab.closest('.card__tabs-btn');
+                    tab.addEventListener('click', function(e) {
+                        e.preventDefault();
+
+                        const id = parent.getAttribute('data-tab');
+                        const content = document.querySelector('.card__tabs-content-item[data-tab="'+id+'"]');
+
+                        content.classList.toggle('active');
+                        parent.classList.toggle('active');
                     })
                     
+                    $tabsContents.forEach(content => {
+                        if (parent.dataset.tab === content.dataset.tab) {
+                            const newContent = content.cloneNode(true);
+                            content.remove();
+
+                            parent.insertAdjacentElement('beforeend', newContent);
+                        }
+                        initQuestionsAccordion();
+                    })
                 })
-            })
+            }
         }
     }
     

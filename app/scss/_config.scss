@@ -382,6 +382,7 @@ a {
 
 .checkbox {
     &__item {
+        display: block;
         position: relative;
         width: 16px;
         height: 16px;
@@ -417,7 +418,7 @@ a {
         }
     }
 
-    span {
+    span:last-child {
         display: inline-block;
         margin-left: 5px;
     }

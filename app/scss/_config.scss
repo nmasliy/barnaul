@@ -426,6 +426,7 @@ a {
 .radiobutton {
 
     &__item {
+        display: block;
         position: relative;
         width: 24px;
         height: 24px;
@@ -463,7 +464,7 @@ a {
         }
     }
 
-    span {
+    span:last-child {
         display: inline-block;
         margin-left: 12px;
     }
